@@ -1,7 +1,6 @@
 package dip.lab2.solution;
 
 // An useful import if you need it.
-import dip.lab2.*;
 import java.text.NumberFormat;
 // Another useful import if you need it.
 import javax.swing.JOptionPane;
