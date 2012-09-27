@@ -33,17 +33,17 @@ public class Startup {
         // Test input/output by looping over collection in a way that
         // doesn't break if we add/subtract employees from array
         for(int i=0; i < employees.length; i++) {
-            System.out.println("Employee " + (i+1) + " compensation:");
-            hr.getAnnualCompensationForEmployee(employees[i]);
+            System.out.println("Employee " + (i+1) + " compensation: "+
+            nf.format(hr.getAnnualCompensationForEmployee(employees[i])));
         }
         
-        // Or, we could do this...but this is fragile
-        System.out.println("Employee 1 annual compensation: " +
-            nf.format(hr.getAnnualCompensationForEmployee(emp1)));
-        System.out.println("Employee 2 annual compensation: " +
-            nf.format(hr.getAnnualCompensationForEmployee(emp2)));
-        System.out.println("Employee 3 annual compensation: " +
-            nf.format(hr.getAnnualCompensationForEmployee(emp3)));
+//         Or, we could do this...but this is fragile
+//        System.out.println("Employee 1 annual compensation: " +
+//            nf.format(hr.getAnnualCompensationForEmployee(emp1)));
+//        System.out.println("Employee 2 annual compensation: " +
+//            nf.format(hr.getAnnualCompensationForEmployee(emp2)));
+//        System.out.println("Employee 3 annual compensation: " +
+//            nf.format(hr.getAnnualCompensationForEmployee(emp3)));
         
     }
 

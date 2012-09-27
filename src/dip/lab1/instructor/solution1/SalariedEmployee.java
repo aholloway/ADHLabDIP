@@ -41,7 +41,7 @@ public class SalariedEmployee implements Employee {
      * therefore can't be used in the high-level class.
      */
     public double getAnnualWages() {
-        return annualSalary;
+        return annualSalary + annualBonus;
     }
 
     public double getAnnualBonus() {
