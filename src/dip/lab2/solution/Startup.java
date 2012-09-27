@@ -44,7 +44,7 @@ public class Startup {
         TipCalculatorStrategy tipCalcs[] = {baggageService, foodService};
 
         for (int i = 0; i < tipCalcs.length; i++) {
-            System.out.println("Tip for service " + i + 1 + ": " + tipCalcs[i].getTip());
+            System.out.println("Tip for service " + (i + 1) + ": " + tipCalcs[i].getTip());
         }
 
 
