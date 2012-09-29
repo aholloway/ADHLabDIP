@@ -2,8 +2,7 @@ package dip.lab2.solution;
 
 // An useful import if you need it.
 import java.text.NumberFormat;
-// Another useful import if you need it.
-import javax.swing.JOptionPane;
+
 
 /**
  * Just a test class for input and output.
@@ -28,6 +27,12 @@ public class Startup {
 
 
         //configuration phase
+        
+        // Just utility code to format numbers nice.
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        
+        // High-level module
+        TipCalculatorService tcs = new TipCalculatorService();
 
         //pass in service class and number of bags.
         BaggageServiceTipCalculator baggageService =
@@ -44,7 +49,8 @@ public class Startup {
         TipCalculatorStrategy tipCalcs[] = {baggageService, foodService};
 
         for (int i = 0; i < tipCalcs.length; i++) {
-            System.out.println("Tip for service " + (i + 1) + ": " + tipCalcs[i].getTip());
+            System.out.println("Tip for " + tcs.getTypeOfService(tipCalcs[i])
+                    + ": " + nf.format(tcs.getTip(tipCalcs[i])));
         }
 
 

@@ -23,7 +23,7 @@ public class HourlyEmployee implements EmployeeStrategy {
         setTotalHrsForYear(totalHrsForYear);
     }
     
-    public double getAnnualWages() {
+    public final double getAnnualWages() {
         return hourlyRate * totalHrsForYear;
     }
     
@@ -31,7 +31,7 @@ public class HourlyEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @return
      */
-    public double getHourlyRate() {
+    public final double getHourlyRate() {
         return hourlyRate;
     }
 
@@ -39,7 +39,7 @@ public class HourlyEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @param hourlyRate -- think carefully about this
      */
-    public void setHourlyRate(double hourlyRate) {
+    public final void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 
@@ -47,7 +47,7 @@ public class HourlyEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @return
      */
-    public double getTotalHrsForYear() {
+    public final double getTotalHrsForYear() {
         return totalHrsForYear;
     }
 
@@ -55,7 +55,7 @@ public class HourlyEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @param totalHrsForYear -- think carefully about this
      */
-    public void setTotalHrsForYear(double totalHrsForYear) {
+    public final void setTotalHrsForYear(double totalHrsForYear) {
         this.totalHrsForYear = totalHrsForYear;
     }
 

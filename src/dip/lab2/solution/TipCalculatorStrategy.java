@@ -7,4 +7,5 @@ package dip.lab2.solution;
  */
 public interface TipCalculatorStrategy {
     public abstract double getTip();
+    public abstract String getTypeOfService();
 }

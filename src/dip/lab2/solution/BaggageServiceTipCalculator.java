@@ -1,16 +1,15 @@
 package dip.lab2.solution;
 
-import dip.lab2.*;
-
 /**
- * An example low-level class. Does this class definition follow the DIP?
- * If not, fix it.
+ * An example low-level class. Does this class definition follow the DIP? If
+ * not, fix it.
  *
  * Any other best practice violations? Fix them too.
  *
  * @author your name goes here
  */
 public class BaggageServiceTipCalculator implements TipCalculatorStrategy {
+
     private static final double MIN_BILL = 0.00;
     private static final double MAX_BILL = 100.00;
     private static final String BILL_ENTRY_ERR =
@@ -19,10 +18,12 @@ public class BaggageServiceTipCalculator implements TipCalculatorStrategy {
     private static final double GOOD_RATE = 0.20;
     private static final double FAIR_RATE = 0.15;
     private static final double POOR_RATE = 0.10;
-
+    private final String TYPE_OF_SERVICE = "Baggage Service";
     private double baseTipPerBag;
     private int bagCount;
+
     public enum ServiceQuality {
+
         GOOD, FAIR, POOR
     }
     private ServiceQuality serviceQuality;
@@ -37,7 +38,7 @@ public class BaggageServiceTipCalculator implements TipCalculatorStrategy {
     public final double getTip() {
         double tip = 0.00; // always initialize local variables
 
-        switch(serviceQuality) {
+        switch (serviceQuality) {
             case GOOD:
                 tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
                 break;
@@ -66,7 +67,7 @@ public class BaggageServiceTipCalculator implements TipCalculatorStrategy {
     }
 
     public final void setBagCount(int bagCount) {
-        if(bagCount < 0) {
+        if (bagCount < 0) {
             throw new IllegalArgumentException(
                     "bag count must be greater than or equal to zero");
         }
@@ -78,11 +79,14 @@ public class BaggageServiceTipCalculator implements TipCalculatorStrategy {
     }
 
     public final void setBaseTipPerBag(double baseTipPerBag) {
-        if(baseTipPerBag < 0) {
+        if (baseTipPerBag < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");
         }
         this.baseTipPerBag = baseTipPerBag;
     }
 
+    public String getTypeOfService() {
+        return TYPE_OF_SERVICE;
+    }
 }

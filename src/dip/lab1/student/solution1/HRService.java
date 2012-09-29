@@ -1,6 +1,5 @@
 package dip.lab1.student.solution1;
 
-import javax.swing.JOptionPane;
 
 /**
  * A high-level class that delegates to employee objects to do the work. Does
@@ -40,7 +39,7 @@ public class HRService {
      * @param e - an employee object (not truly polymorphic!)
      * @return the annual compensation for supported employee types
      */
-    public double getAnnualCompensationForEmployee(EmployeeStrategy e) {
+    public final double getAnnualCompensationForEmployee(EmployeeStrategy e) {
         return e.getAnnualWages();
     }
 }

@@ -31,7 +31,7 @@ public class SalariedEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @param annualBonus -- think carefully about this
      */
-    public void setAnnualBonus(double annualBonus) {
+    public final void setAnnualBonus(double annualBonus) {
         this.annualBonus = annualBonus;
     }
 
@@ -39,7 +39,7 @@ public class SalariedEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @return
      */
-    public double getAnnualSalary() {
+    public final double getAnnualSalary() {
         return annualSalary;
     }
 
@@ -47,7 +47,7 @@ public class SalariedEmployee implements EmployeeStrategy {
      * Is this polymorphic? Should it be? Does it belong here?
      * @param annualSalary - think carefully about this
      */
-    public void setAnnualSalary(double annualSalary) {
+    public final void setAnnualSalary(double annualSalary) {
         this.annualSalary = annualSalary;
     }
     
@@ -57,7 +57,7 @@ public class SalariedEmployee implements EmployeeStrategy {
      *
      * @return annual bonus or zero if none.
      */
-    public double getAnnualWages() {
+    public final double getAnnualWages() {
         return annualSalary + annualBonus;
     }
 }
