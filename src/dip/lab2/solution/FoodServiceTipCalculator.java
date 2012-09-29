@@ -7,7 +7,7 @@ package dip.lab2.solution;
  *
  * Any other best practice violations? Fix them too.
  *
- * @author your name goes here
+ * @author Drew Holloway
  */
 public class FoodServiceTipCalculator implements TipCalculatorStrategy {
     private static final double MIN_BILL = 0.00;
@@ -62,7 +62,7 @@ public class FoodServiceTipCalculator implements TipCalculatorStrategy {
         return serviceQuality;
     }
 
-    public String getTypeOfService() {
+    public final String getTypeOfService() {
         return TYPE_OF_SERVICE;
     }
     

@@ -1,8 +1,7 @@
 package dip.lab2.solution;
 
-// An useful import if you need it.
 import java.text.NumberFormat;
-
+import javax.swing.JOptionPane;
 
 /**
  * Just a test class for input and output.
@@ -14,7 +13,7 @@ import java.text.NumberFormat;
  * class. Did it work? Are the low-level instances interchangeable? The DIP
  * requires this.
  *
- * @author your name goes here
+ * @author Drew Holloway
  */
 public class Startup {
 
@@ -27,33 +26,39 @@ public class Startup {
 
 
         //configuration phase
-        
-        // Just utility code to format numbers nice.
+
+        // Utility code to format the numbers as dollars
         NumberFormat nf = NumberFormat.getCurrencyInstance();
-        
-        // High-level module
+
+        // Declare an instance of my high-level module
         TipCalculatorService tcs = new TipCalculatorService();
 
-        //pass in service class and number of bags.
+        //Instantiate BaggageServiceTipCalculator, with parameters
+        // service quality and number of bags.
         BaggageServiceTipCalculator baggageService =
                 new BaggageServiceTipCalculator(
                 BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
 
-        //pass in food service quality and bill amount
+        //Instantiate FoodServiceTipCalculator, with parameters
+        // service quality and bill amount.
         FoodServiceTipCalculator foodService =
                 new FoodServiceTipCalculator(
                 FoodServiceTipCalculator.ServiceQuality.GOOD, 50);
 
 
-        //use loop and polymorphism
+        //create an array to hold my TipCalculatorStrategy objects
+        //I will use polymorphism and the Liskov Substitution Principle
+        // to be able to pass the objects to my higher level module
+        // due to the fact that they implement an interface and thus
+        // have the same functions with the same names.
         TipCalculatorStrategy tipCalcs[] = {baggageService, foodService};
 
+
+        //loop through types of service and create nice output for the end user.
         for (int i = 0; i < tipCalcs.length; i++) {
-            System.out.println("Tip for " + tcs.getTypeOfService(tipCalcs[i])
-                    + ": " + nf.format(tcs.getTip(tipCalcs[i])));
+            String message = "Tip for " + tcs.getTypeOfService(tipCalcs[i])
+                    + ": " + nf.format(tcs.getTip(tipCalcs[i]));
+            JOptionPane.showMessageDialog(null, message);
         }
-
-
-
     }
 }
