@@ -15,6 +15,12 @@ public class Startup {
         MessagingService messagingService=new MessagingService(tipOfTheDay,cr);
         messagingService.renderMessage();
         
+        //demonstrate capability to switch both the message provider
+        // and the message renderer at runtime
+        messagingService.setMessageProvider(new ErrorMessageProvider());
+        messagingService.setMessageRenderer(new GuiRenderer());
+        
+        messagingService.renderMessage();
         
     }
 }
