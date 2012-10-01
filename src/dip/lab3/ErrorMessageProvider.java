@@ -5,8 +5,13 @@ public class ErrorMessageProvider implements MessageProviderStrategy {
     // here we just use a sample message.
 
     public final String SAMPLE_MESSAGE = "Catastrophic Failure";
+    private final String MESSAGE_HEADER = "Uh Oh!";
+    private final MessageTypeEnum.MessageType messageType=MessageTypeEnum.MessageType.ERROR;
+    Message messageObject = new Message(SAMPLE_MESSAGE,MESSAGE_HEADER,
+            messageType);
 
-    public String getMessage() {
-        return SAMPLE_MESSAGE;
+    @Override
+    public Message getMessage() {
+        return messageObject;
     }
 }
