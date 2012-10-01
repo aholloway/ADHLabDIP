@@ -2,7 +2,6 @@ package dip.lab2.solution;
 
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
-
 /**
  * Just a test class for input and output.
  *
@@ -17,10 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class Startup {
 
-    public static enum ServiceQuality {
-
-        GOOD, FAIR, POOR
-    };
+    
 
     public static void main(String[] args) {
 
@@ -37,13 +33,13 @@ public class Startup {
         // service quality and number of bags.
         BaggageServiceTipCalculator baggageService =
                 new BaggageServiceTipCalculator(
-                BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
+                ServiceQualityEnum.ServiceQuality.FAIR, 5);
 
         //Instantiate FoodServiceTipCalculator, with parameters
         // service quality and bill amount.
         FoodServiceTipCalculator foodService =
                 new FoodServiceTipCalculator(
-                FoodServiceTipCalculator.ServiceQuality.GOOD, 50);
+                ServiceQualityEnum.ServiceQuality.GOOD, 50);
 
 
         //create an array to hold my TipCalculatorStrategy objects

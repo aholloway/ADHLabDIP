@@ -1,5 +1,7 @@
 package dip.lab2.solution;
 
+import dip.lab2.solution.ServiceQualityEnum.ServiceQuality;
+
 /**
  * An example low-level class. Does this class definition follow the DIP? If
  * not, fix it.
@@ -22,10 +24,7 @@ public class BaggageServiceTipCalculator implements TipCalculatorStrategy {
     private double baseTipPerBag;
     private int bagCount;
 
-    public enum ServiceQuality {
-
-        GOOD, FAIR, POOR
-    }
+    //removed ServiceQuality to its own class.  Retrieved info via import.
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {

@@ -1,5 +1,7 @@
 package dip.lab2.solution;
 
+import dip.lab2.solution.ServiceQualityEnum.ServiceQuality;
+
 
 /**
  * An example low-level class. Does this class definition follow the DIP?
@@ -18,9 +20,7 @@ public class FoodServiceTipCalculator implements TipCalculatorStrategy {
     private static final double POOR_RATE = 0.10;
     private final String TYPE_OF_SERVICE = "Food Service";
     private double bill;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
+    
     private ServiceQuality serviceQuality;
 
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
