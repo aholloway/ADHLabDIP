@@ -23,5 +23,9 @@ public class Startup {
         
         messagingService.renderMessage();
         
+        messagingService.setMessageProvider(new RandomMessageProvider());
+        messagingService.renderMessage();
+        messagingService.renderMessage();
+        messagingService.renderMessage();
     }
 }

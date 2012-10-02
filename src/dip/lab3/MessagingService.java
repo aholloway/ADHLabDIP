@@ -7,8 +7,8 @@ package dip.lab3;
 public class MessagingService {
     //has a
 
-    MessageProviderStrategy messageProvider;
-    MessageRendererStrategy messageRenderer;
+    private MessageProviderStrategy messageProvider;
+    private MessageRendererStrategy messageRenderer;
     private final String NULL_MESSAGE_PROVIDER_ERROR = "Error: Message Provider cannot be null";
     private final String NULL_MESSAGE_RENDERER_ERROR = "Error: Message Renderer cannot be null";
 

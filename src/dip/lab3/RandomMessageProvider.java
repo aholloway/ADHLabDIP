@@ -3,12 +3,18 @@
  */
 package dip.lab3;
 
+import dip.lab3.MessageTypeEnum.MessageType;
 import java.util.Random;
 
 public class RandomMessageProvider implements MessageProviderStrategy {
-    private Message message1;
-    private Message message2;
-    private Message message3;
+    
+    private String yourWeight="Your Weight";
+    private Message message1 = new Message("You're too skinny.",yourWeight,
+            MessageType.INFORMATION);
+    private Message message2=new Message("You're too fat!",yourWeight,
+            MessageType.ERROR);
+    private Message message3=new Message("You're perfect.",yourWeight,
+            MessageType.INFORMATION);
     
     private Message[] messageArray ={message1,message2,message3};
     
@@ -22,11 +28,10 @@ public class RandomMessageProvider implements MessageProviderStrategy {
         
         //need to use r to choose the message.
         // not sure how yet.
-        //messageArray
         int index = r.nextInt(messageArray.length);
         
+        return messageArray[index];
         
-        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
