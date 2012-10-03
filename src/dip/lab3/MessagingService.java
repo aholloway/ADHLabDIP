@@ -19,7 +19,7 @@ public class MessagingService {
         this.setMessageOutput(messageOutput);
     }
 
-    public final MessageInputStrategy getMessageProvider() {
+    public final MessageInputStrategy getMessageInput() {
         return messageInput;
     }
 
@@ -30,7 +30,7 @@ public class MessagingService {
         this.messageInput = messageProvider;
     }
 
-    public final MessageOutputStrategy getMessageRenderer() {
+    public final MessageOutputStrategy getMessageOutput() {
         return messageOutput;
     }
 
