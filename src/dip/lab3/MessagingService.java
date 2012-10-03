@@ -46,6 +46,6 @@ public class MessagingService {
 //        messageRenderer.renderMessage(message);
 
         //for some reason this line fails...
-        messageRenderer.renderMessage(messageProvider.getMessage());
+        messageRenderer.setMessage(messageProvider.getMessage());
     }
 }

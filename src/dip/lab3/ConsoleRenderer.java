@@ -6,7 +6,7 @@ public class ConsoleRenderer implements MessageOutputStrategy {
 
     private final String NULL_MESSAGE_ERROR = "Error: Message may not be null";
 
-    public void renderMessage(Message message) {
+    public void setMessage(Message message) {
         if (message == null) {
             throw new IllegalArgumentException(NULL_MESSAGE_ERROR);
         } else {

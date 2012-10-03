@@ -16,5 +16,5 @@ package dip.lab3;
 public interface MessageOutputStrategy {
     //public abstract void renderMessage(String message, 
     //MessageType messageType);
-    public abstract void renderMessage(Message message);
+    public abstract void setMessage(Message message);
 }
