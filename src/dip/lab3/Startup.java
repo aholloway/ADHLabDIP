@@ -15,19 +15,19 @@ public class Startup {
         //create higher level class (service class) passing in the low level
         // classes as parameters
         MessagingService messagingService = new MessagingService(tipOfTheDay, cr);
-        messagingService.renderMessage();
+        messagingService.outputMessage();
 
         //demonstrate capability to switch both the message provider
         // and the message renderer at runtime
-        messagingService.setMessageProvider(new ErrorMessageInputStrategy());
-        messagingService.setMessageRenderer(new GuiOutputStrategy());
+        messagingService.setMessageInput(new ErrorMessageInputStrategy());
+        messagingService.setMessageOutput(new GuiOutputStrategy());
 
-        messagingService.renderMessage();
+        messagingService.outputMessage();
 
-        messagingService.setMessageProvider(new RandomMessageOutputStrategy());
+        messagingService.setMessageInput(new RandomMessageOutputStrategy());
 
         for (int i = 1; i <= 6; i++) {
-            messagingService.renderMessage();
+            messagingService.outputMessage();
         }
     }
 }
