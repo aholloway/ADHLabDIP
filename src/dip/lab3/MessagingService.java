@@ -7,34 +7,34 @@ package dip.lab3;
 public class MessagingService {
     //has a
 
-    private MessageProviderStrategy messageProvider;
-    private MessageRendererStrategy messageRenderer;
+    private MessageInputStrategy messageProvider;
+    private MessageOutputStrategy messageRenderer;
     private final String NULL_MESSAGE_PROVIDER_ERROR = "Error: Message Provider cannot be null";
     private final String NULL_MESSAGE_RENDERER_ERROR = "Error: Message Renderer cannot be null";
 
     //both are Strategy members are set in the constructor
-    public MessagingService(MessageProviderStrategy messageProvider,
-            MessageRendererStrategy messageRenderer) {
+    public MessagingService(MessageInputStrategy messageProvider,
+            MessageOutputStrategy messageRenderer) {
         this.setMessageProvider(messageProvider);
         this.setMessageRenderer(messageRenderer);
     }
 
-    public final MessageProviderStrategy getMessageProvider() {
+    public final MessageInputStrategy getMessageProvider() {
         return messageProvider;
     }
 
-    public final void setMessageProvider(MessageProviderStrategy messageProvider) {
+    public final void setMessageProvider(MessageInputStrategy messageProvider) {
         if (messageProvider == null) {
             throw new IllegalArgumentException(NULL_MESSAGE_PROVIDER_ERROR);
         }
         this.messageProvider = messageProvider;
     }
 
-    public final MessageRendererStrategy getMessageRenderer() {
+    public final MessageOutputStrategy getMessageRenderer() {
         return messageRenderer;
     }
 
-    public final void setMessageRenderer(MessageRendererStrategy messageRenderer) {
+    public final void setMessageRenderer(MessageOutputStrategy messageRenderer) {
         if (messageRenderer == null) {
             throw new IllegalArgumentException(NULL_MESSAGE_RENDERER_ERROR);
         }

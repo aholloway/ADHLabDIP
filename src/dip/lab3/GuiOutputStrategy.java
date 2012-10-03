@@ -3,7 +3,7 @@ package dip.lab3;
 import dip.lab3.MessageTypeEnum.MessageType;
 import javax.swing.JOptionPane;
 
-public class GuiRenderer implements MessageRendererStrategy {
+public class GuiOutputStrategy implements MessageOutputStrategy {
 
     private final String NULL_MESSAGE_ERROR = "Error: Message may not be null";
 

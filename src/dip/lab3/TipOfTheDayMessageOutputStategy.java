@@ -3,7 +3,7 @@ package dip.lab3;
 import dip.lab3.MessageTypeEnum.MessageType;
 
 
-public class TipOfTheDayMessageProvider implements MessageProviderStrategy {
+public class TipOfTheDayMessageOutputStategy implements MessageInputStrategy {
     //a working version of this class would get a message from another source
     // here we just use a sample message, courtesy of a friend of mine.
 

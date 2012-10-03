@@ -8,7 +8,7 @@ public class Startup {
 
     public static void main(String[] args) {
         //instantiate low level classes
-        TipOfTheDayMessageProvider tipOfTheDay = new TipOfTheDayMessageProvider();
+        TipOfTheDayMessageOutputStategy tipOfTheDay = new TipOfTheDayMessageOutputStategy();
 
         ConsoleRenderer cr = new ConsoleRenderer();
 
@@ -19,12 +19,12 @@ public class Startup {
 
         //demonstrate capability to switch both the message provider
         // and the message renderer at runtime
-        messagingService.setMessageProvider(new ErrorMessageProvider());
-        messagingService.setMessageRenderer(new GuiRenderer());
+        messagingService.setMessageProvider(new ErrorMessageInputStrategy());
+        messagingService.setMessageRenderer(new GuiOutputStrategy());
 
         messagingService.renderMessage();
 
-        messagingService.setMessageProvider(new RandomMessageProvider());
+        messagingService.setMessageProvider(new RandomMessageOutputStrategy());
 
         for (int i = 1; i <= 6; i++) {
             messagingService.renderMessage();

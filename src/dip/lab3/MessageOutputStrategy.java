@@ -13,7 +13,7 @@ package dip.lab3;
  * So let me build that object.
  * @author Drew
  */
-public interface MessageRendererStrategy {
+public interface MessageOutputStrategy {
     //public abstract void renderMessage(String message, 
     //MessageType messageType);
     public abstract void renderMessage(Message message);

@@ -1,6 +1,6 @@
 package dip.lab3;
 
-public class ErrorMessageProvider implements MessageProviderStrategy {
+public class ErrorMessageInputStrategy implements MessageInputStrategy {
     //a working version of this class would get a message from another source
     // here we just use a sample message.
 

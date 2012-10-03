@@ -5,6 +5,6 @@ package dip.lab3;
  *
  * @author Drew
  */
-public interface MessageProviderStrategy {
+public interface MessageInputStrategy {
     public abstract Message getMessage();
 }

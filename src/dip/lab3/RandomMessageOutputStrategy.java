@@ -6,7 +6,7 @@ package dip.lab3;
 import dip.lab3.MessageTypeEnum.MessageType;
 import java.util.Random;
 
-public class RandomMessageProvider implements MessageProviderStrategy {
+public class RandomMessageOutputStrategy implements MessageInputStrategy {
     
     private String yourWeight="Your Weight";
     private Message message1 = new Message("You're too skinny.",yourWeight,
